@@ -6,7 +6,7 @@ public class Student {
 		StudentClass ob2=new StudentClass("DEF",123,7,"CS");
 		ob1.display();
 		ob2.display();
-		System.out.println(ob1.name+" is equal to "+ob2.name+" : "+ob1.equals(ob2));
+		System.out.println(ob1.name+" is equal to "+ob2.name+" : "+ob1.isEquals(ob2)); // can use Equals() also
 	}
 
 }
@@ -25,14 +25,15 @@ class StudentClass{
 		branch=b;
 	}
 	
-	/*boolean isEqual(StudentClass ob)
+	boolean isEquals(StudentClass ob)
 	{
 		if (name.compareTo(ob.name)!=0)return false;
 		if(id!=ob.id)return false;
 		if(sem!=ob.sem)return false;
 		if(branch.compareTo(ob.branch)!=0)return false;
 		return true;
-	}*/
+	}
+	
 	void display()
 	{
 		System.out.println("Name : "+name);

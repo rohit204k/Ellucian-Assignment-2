@@ -46,14 +46,19 @@ public class EmployeeClass {
 	
 	static void paydisplay(Employe m)
 	{
-		calcPay(m);
+		if(m==null)
+		{
+			System.out.println("Enter the details of the employee first\n");
+			return;
+		}
+		calculate(m);
 		System.out.println("\nSalary of the employee is = Rs "+m.salary+"/-");
 		System.out.println("PF of the employee is = Rs "+m.pf+"/-");
 		System.out.println("Allowance of the employee is = Rs "+m.allowance+"/-\n");
 		return;
 	}
 
-	public static Employe calcPay(Employe ob)
+	public static Employe calculate(Employe ob)
 	{ 
 		int exp=(2020-ob.hireYear);
 		ob.salary += (0.02*exp)*ob.salary;
@@ -72,10 +77,6 @@ public class EmployeeClass {
 
 class Employe
 { 
-	public Employe()
-	{
-		System.out.println("Add the details of the employee first");
-	}
 	
 	public Employe(String fn,String ln,double s,int year)
 	{ 
