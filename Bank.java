@@ -17,20 +17,37 @@ public class Bank {
 			System.out.print("\nEnter an option : ");
 			
 			i=sc.nextInt();
+				
 			switch(i)
 			{
 				case 1: a=addDetails();
 						break;
-				case 2: System.out.println("Enter withdraw amount");
+				case 2: if(a==null)
+						{
+							System.out.println("Add the account details first.");
+							break;
+						}
+						System.out.println("Enter withdraw amount");
 						int am=sc.nextInt();
 						a.withdraw(am);
 						break;
-				case 3: System.out.println("Enter Deposit amount");
+				case 3: if(a==null)
+						{
+							System.out.println("Add the account details first.");
+							break;
+						}
+						System.out.println("Enter Deposit amount");
 						int amm=sc.nextInt();
 						a.deposit(amm);
+						break;						
+				case 4: if(a==null)
+						{
+							System.out.println("Add the account details first.");
+							break;
+						}
+						a.display();
 						break;
-				case 4: a.display();
-						break;
+				case 5: break;
 				default:System.out.println("Invalid Option\n");
 						break;
 			}
